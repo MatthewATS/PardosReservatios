@@ -1,0 +1,2 @@
+src\presentation\features\history\HistoryPage.jsx: Broken relative import '../../context/ReservationContext' -> C:\Users\wilso\Downloads\PardosReservatios\PardosReservatios\src\presentation\context\ReservationContext
+src\presentation\features\kitchen\KitchenPage.jsx: Broken relative import '../../context/KitchenContext' -> C:\Users\wilso\Downloads\PardosReservatios\PardosReservatios\src\presentation\context\KitchenContext

@@ -1,0 +1,317 @@
+/**
+ * src/features/tables/TablesPage.module.css
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Estilos del mapa visual de mesas.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: fadeIn 0.4s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header { display: flex; justify-content: space-between; align-items: flex-start; }
+.title  { font-size: 1.6rem; font-weight: 800; color: var(--color-text-dark); }
+.subtitle { font-size: 13px; color: var(--color-text-muted); margin-top: 4px; }
+
+/* ── Leyenda ───────────────────────── */
+.legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-mid);
+  font-weight: 500;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.dotFree     { background: var(--color-success); }
+.dotReserved { background: var(--color-warning); }
+.dotOccupied { background: var(--color-primary); }
+
+/* ── Zona ──────────────────────────── */
+.zone { display: flex; flex-direction: column; gap: 14px; }
+
+.zoneName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.tablesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+/* ── Table card ────────────────────── */
+.tableCard {
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  padding: 14px 12px;
+  text-align: center;
+  cursor: default;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.tableCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.table--free {
+  background: var(--color-success-soft);
+  border-color: var(--color-success);
+}
+
+.table--reserved {
+  background: var(--color-warning-soft);
+  border-color: var(--color-warning);
+}
+
+.table--occupied {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+}
+
+.tableNumber {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.tableCap {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.tableClient { margin-top: 8px; }
+
+.tableClientName {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tableTime {
+  font-size: 11px;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.tableFreeLabel {
+  font-size: 11px;
+  color: var(--color-success);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* ── Modal body ────────────────────── */
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Info de reserva */
+.reservaInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px 16px;
+  background: var(--color-cream);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+}
+.reservaInfoItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--color-text-mid);
+}
+
+/* Lista de platos */
+.itemsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.itemsSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--color-text-muted);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.noItems {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 16px;
+  background: var(--color-cream);
+  border-radius: var(--radius-md);
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  gap: 10px;
+  transition: background var(--transition-fast);
+}
+.itemRow:hover { background: var(--color-cream); }
+
+.itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.itemQty {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-primary);
+  min-width: 22px;
+}
+.itemName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.itemRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.itemPrice {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+.itemStatus {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid currentColor;
+  white-space: nowrap;
+}
+
+.itemsTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-top: 2px solid var(--color-primary);
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--color-text-mid);
+}
+.itemsTotal strong {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+/* ── Añadir platos ─────────────────── */
+.addSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addToggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 16px;
+  background: var(--color-primary-soft);
+  border: 1.5px dashed var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+}
+.addToggleBtn:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-style: solid;
+}
+.addToggleBtn svg:last-child { margin-left: auto; }
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  background: var(--color-cream);
+  animation: fadeIn 0.2s ease;
+}
+
+.menuActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* ── Footer del modal ──────────────── */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-border-light);
+}

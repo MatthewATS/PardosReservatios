@@ -29,32 +29,32 @@
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom'
 
 // Providers de estado global
-import { AuthProvider }        from  '@/domain/context/AuthContext'
-import { ReservationProvider } from  '@/domain/context/ReservationContext'
-import { ClientProvider }      from  '@/domain/context/ClientContext'
-import { CashProvider }        from  '@/domain/context/CashContext'
-import { KitchenProvider }     from  '@/domain/context/KitchenContext'
+import { AuthProvider }        from  '@/context/AuthContext'
+import { ReservationProvider } from  '@/context/ReservationContext'
+import { ClientProvider }      from  '@/context/ClientContext'
+import { CashProvider }        from  '@/context/CashContext'
+import { KitchenProvider }     from  '@/context/KitchenContext'
 
 // Route guards
-import { ProtectedRoute, PublicOnlyRoute } from  '@/presentation/components/auth/ProtectedRoute'
+import { ProtectedRoute, PublicOnlyRoute } from  '@/components/auth/ProtectedRoute'
 
 // Layout principal
-import AppLayout from  '@/presentation/components/layout/AppLayout'
+import AppLayout from  '@/components/layout/AppLayout'
 
 // Páginas
-import LoginPage    from  '@/presentation/features/auth/LoginPage'
-import BookingPage  from  '@/presentation/features/booking/BookingPage'
-import DashboardPage    from  '@/presentation/features/dashboard/DashboardPage'
-import AnalyticsPage    from  '@/presentation/features/analytics/AnalyticsPage'
-import ReservationsPage from  '@/presentation/features/reservations/ReservationsPage'
-import TablesPage       from  '@/presentation/features/tables/TablesPage'
-import ClientsPage      from  '@/presentation/features/clients/ClientsPage'
-import CashPage         from  '@/presentation/features/cash/CashPage'
-import KitchenPage      from  '@/presentation/features/kitchen/KitchenPage'
-import HistoryPage      from  '@/presentation/features/history/HistoryPage'
-import ReportsPage      from  '@/presentation/features/reports/ReportsPage'
-import SettingsPage     from  '@/presentation/features/settings/SettingsPage'
-import NotFoundPage     from  '@/presentation/pages/NotFoundPage'
+import LoginPage    from  '@/features/auth/LoginPage'
+import BookingPage  from  '@/features/booking/BookingPage'
+import DashboardPage    from  '@/features/dashboard/DashboardPage'
+import AnalyticsPage    from  '@/features/analytics/AnalyticsPage'
+import ReservationsPage from  '@/features/reservations/ReservationsPage'
+import TablesPage       from  '@/features/tables/TablesPage'
+import ClientsPage      from  '@/features/clients/ClientsPage'
+import CashPage         from  '@/features/cash/CashPage'
+import KitchenPage      from  '@/features/kitchen/KitchenPage'
+import HistoryPage      from  '@/features/history/HistoryPage'
+import ReportsPage      from  '@/features/reports/ReportsPage'
+import SettingsPage     from  '@/features/settings/SettingsPage'
+import NotFoundPage     from  '@/pages/NotFoundPage'
 
 // ── Página de acceso denegado ─────────────────────────────────────────────────
 function UnauthorizedPage() {

@@ -8,11 +8,11 @@
 
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { useReservations } from '@/domain/context/ReservationContext';
-import { useAuth } from '@/domain/context/AuthContext';
+import { useReservations } from '@/context/ReservationContext';
+import { useAuth } from '@/context/AuthContext';
 import { kitchenService } from '@/data/services/kitchen.service';
 import { kitchenRules } from '@/domain/utils/kitchen.rules';
-import { TICKET_STATUS_LABELS } from '@/domain/context/KitchenContext';
+import { TICKET_STATUS_LABELS } from '@/context/KitchenContext';
 
 export function useKitchenOrders(dateFilter) {
   const { reservations, updateReservation } = useReservations();

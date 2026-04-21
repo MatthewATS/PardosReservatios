@@ -10,8 +10,8 @@
 
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { useReservations } from '@/domain/context/ReservationContext';
-import { useAuth } from '@/domain/context/AuthContext';
+import { useReservations } from '@/context/ReservationContext';
+import { useAuth } from '@/context/AuthContext';
 import { reservationRules } from '@/domain/utils/reservation.rules';
 import { reservationService } from '@/data/services/reservation.service';
 

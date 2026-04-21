@@ -8,9 +8,9 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import toast from 'react-hot-toast';
-import { useAuth } from '@/domain/context/AuthContext';
-import { useReservations } from '@/domain/context/ReservationContext';
-import { useClients } from '@/domain/context/ClientContext';
+import { useAuth } from '@/context/AuthContext';
+import { useReservations } from '@/context/ReservationContext';
+import { useClients } from '@/context/ClientContext';
 import { reportsUtils } from '@/domain/utils/reports.utils';
 
 export function useDashboard() {

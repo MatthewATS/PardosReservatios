@@ -7,9 +7,9 @@
 
 import { useState, useMemo } from 'react';
 import toast from 'react-hot-toast';
-import { useAuth } from '@/domain/context/AuthContext';
-import { useCash } from '@/domain/context/CashContext';
-import { useReservations } from '@/domain/context/ReservationContext';
+import { useAuth } from '@/context/AuthContext';
+import { useCash } from '@/context/CashContext';
+import { useReservations } from '@/context/ReservationContext';
 import { cashUtils } from '@/domain/utils/cash.utils';
 import { cashService } from '@/data/services/cash.service';
 
